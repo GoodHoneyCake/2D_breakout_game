@@ -9,7 +9,7 @@ let dy = -2;
 
 function drawBall() {
   ctx.beginPath();
-  ctx.arc(x, y, 10, 0, Math.PI * 2);
+  ctx.arc(x, y, 10, 0, Math.PI * 1);
   ctx.fillstyle = "#0095DD";
   ctx.fill();
   ctx.closePath();

@@ -10,9 +10,7 @@ let dy = -2;
 const ballRadius = 10;
 
 function randomColorStyle() {
-  // H(Hue)S(Saturation)L(Lightness)
-  // This will create a random color with same saturation and light intensity (luminance).
-  // https://stackoverflow.com/questions/23861481/randomize-rgb-in-html5-canvas-with-a-new-value-for-each-fillrect-using-javascrip
+  // hsl color google finder : H(Hue)S(Saturation)L(Lightness)
   ctx.fillStyle = "hsl(" + 360 * Math.random() + ", 50%, 50%)";
 }
 

@@ -57,9 +57,9 @@ function draw() {
     randomColorStyle();
   }
 
-  if (rightPressed && paddleX < canvas.width - paddleWidth) {
+  if (rightPressed) {
     paddleX += 7; // pixel
-  } else if (leftPressed && paddleX > 0) {
+  } else if (leftPressed) {
     paddleX -= 7;
   }
 }

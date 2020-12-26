@@ -42,7 +42,7 @@ function drawBall() {
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBall();
-  drawPaddle();
+
   x += dx;
   y += dy;
 
@@ -57,9 +57,9 @@ function draw() {
     randomColorStyle();
   }
 
-  if (rightPressed && paddleX < canvas.width - paddleWidth) {
+  if (rightPressed) {
     paddleX += 7; // pixel
-  } else if (leftPressed && paddleX > 0) {
+  } else if (leftPressed) {
     paddleX -= 7;
   }
 }

@@ -19,10 +19,11 @@ let leftPressed = false;
 function drawPaddle() {
   ctx.beginPath();
   ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-  ctx.fillstyle = "#0095DD";
+  ctx.fillStyle = "#0095DD";
   ctx.fill();
   ctx.closePath();
 }
+drawPaddle();
 
 function randomColorStyle() {
   // H(Hue)S(Saturation)L(Lightness)
@@ -42,7 +43,6 @@ function drawBall() {
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBall();
-  drawPaddle();
   x += dx;
   y += dy;
 
@@ -57,9 +57,9 @@ function draw() {
     randomColorStyle();
   }
 
-  if (rightPressed && paddleX < canvas.width - paddleWidth) {
+  if (rightPressed) {
     paddleX += 7; // pixel
-  } else if (leftPressed && paddleX > 0) {
+  } else if (leftPressed) {
     paddleX -= 7;
   }
 }

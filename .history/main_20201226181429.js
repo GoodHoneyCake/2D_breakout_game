@@ -59,7 +59,7 @@ function draw() {
 
   if (rightPressed && paddleX < canvas.width - paddleWidth) {
     paddleX += 7; // pixel
-  } else if (leftPressed && paddleX > 0) {
+  } else if (leftPressed && paddleX < canvas.width + paddleWidth) {
     paddleX -= 7;
   }
 }

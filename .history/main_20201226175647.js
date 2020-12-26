@@ -11,14 +11,11 @@ const ballRadius = 10;
 
 const paddleHeight = 10;
 const paddleWidth = 75;
-let paddleX = (canvas.width - paddleWidth) / 2;
-
-let rightPressed = false;
-let leftPressed = false;
+const paddleX = (canvas.width - paddleWidth) / 2;
 
 function drawPaddle() {
   ctx.beginPath();
-  ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+  ctx.rect(paddleX, canvas.height - paddleWidth, paddleWidth, paddleHeight);
   ctx.fillstyle = "#0095DD";
   ctx.fill();
   ctx.closePath();
@@ -45,7 +42,6 @@ function draw() {
   drawPaddle();
   x += dx;
   y += dy;
-
   // bottom edge || top edge
   if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
     dy = -dy;
@@ -56,31 +52,5 @@ function draw() {
     dx = -dx;
     randomColorStyle();
   }
-
-  if (rightPressed && paddleX < canvas.width - paddleWidth) {
-    paddleX += 7; // pixel
-  } else if (leftPressed && paddleX > 0) {
-    paddleX -= 7;
-  }
 }
-
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
-
-function keyDownHandler(event) {
-  if (event.keyCode == 39) {
-    rightPressed = true;
-  } else if (event.keyCode == 37) {
-    leftPressed = true;
-  }
-}
-
-function keyUpHandler(event) {
-  if (event.keyCode == 39) {
-    rightPressed = false;
-  } else if (event.keyCode == 37) {
-    leftPressed = false;
-  }
-}
-
 setInterval(draw, 10);

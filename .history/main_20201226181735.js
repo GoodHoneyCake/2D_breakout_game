@@ -10,7 +10,7 @@ let dy = -2;
 const ballRadius = 10;
 
 const paddleHeight = 10;
-const paddleWidth = 75;
+const paddleWidth = 35;
 let paddleX = (canvas.width - paddleWidth) / 2;
 
 let rightPressed = false;

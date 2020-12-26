@@ -11,10 +11,10 @@ const ballRadius = 10;
 
 const paddleHeight = 10;
 const paddleWidth = 75;
-let paddleX = (canvas.width - paddleWidth) / 2;
+const paddleX = (canvas.width - paddleWidth) / 2;
 
-let rightPressed = false;
-let leftPressed = false;
+const rightPressed = false;
+const leftPressed = false;
 
 function drawPaddle() {
   ctx.beginPath();
@@ -57,9 +57,9 @@ function draw() {
     randomColorStyle();
   }
 
-  if (rightPressed && paddleX < canvas.width - paddleWidth) {
+  if (rightPressed) {
     paddleX += 7; // pixel
-  } else if (leftPressed && paddleX > 0) {
+  } else if (leftPressed) {
     paddleX -= 7;
   }
 }

@@ -89,7 +89,6 @@ function collisionDetection() {
           y < b.y + brickHeight
         ) {
           dy = -dy;
-          b.status = 0;
         }
       }
     }
@@ -117,7 +116,6 @@ function draw() {
   drawBricks();
   drawBall();
   drawPaddle();
-  collisionDetection();
   x += dx;
   y += dy;
 

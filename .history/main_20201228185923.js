@@ -37,6 +37,7 @@ function drawBricks() {
   for (let c = 0; c < brickColumnCount; c++) {
     for (let r = 0; r < brickRowCount; r++) {
       if (bricks[c][r].status == 1) {
+        randomColorStyle();
         let brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
         let brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
         bricks[c][r].x = brickX;

@@ -117,7 +117,6 @@ function draw() {
   drawBricks();
   drawBall();
   drawPaddle();
-  collisionDetection();
   x += dx;
   y += dy;
 

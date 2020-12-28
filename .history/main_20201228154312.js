@@ -7,7 +7,7 @@ let y = canvas.height - 30;
 let dx = 2;
 let dy = -2;
 
-let ballRadius = 10;
+const ballRadius = 10;
 
 const paddleHeight = 10;
 const paddleWidth = 75;
@@ -72,6 +72,7 @@ function draw() {
   } else if (y + dy > canvas.height - ballRadius) {
     if (x > paddleX && x < paddleX + paddleWidth) {
       dy = -dy;
+      setInterval(draw, 50);
     } else {
       alert("GAME OVER");
       document.location.reload();
@@ -80,7 +81,6 @@ function draw() {
   // right edge || left edge
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx;
-
     randomColorStyle();
   }
 

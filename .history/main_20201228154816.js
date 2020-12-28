@@ -68,10 +68,12 @@ function draw() {
   // bottom edge || top edge
   if (y + dy < ballRadius) {
     dy = -dy;
+    ballRadius = 10;
     randomColorStyle();
   } else if (y + dy > canvas.height - ballRadius) {
     if (x > paddleX && x < paddleX + paddleWidth) {
       dy = -dy;
+      ballRadius = 1;
     } else {
       alert("GAME OVER");
       document.location.reload();
@@ -80,7 +82,7 @@ function draw() {
   // right edge || left edge
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx;
-
+    ballRadius = 10;
     randomColorStyle();
   }
 

@@ -21,7 +21,7 @@ let brickColumnCount = 5;
 let brickWidth = 75;
 let brickHeight = 20;
 let brickPadding = 10;
-let brickOffsetTop = 30;
+let brickOffsetTop = 50;
 let brickOffsetLeft = 30;
 
 let bricks = [];

@@ -24,6 +24,9 @@ let brickPadding = 10;
 let brickOffsetTop = 30;
 let brickOffsetLeft = 30;
 
+let brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
+let brickY = r * (brickHeight * brickPadding) + brickOffsetTop;
+
 let bricks = [];
 for (let c = 0; c < brickColumnCount; c++) {
   bricks[c] = [];
@@ -35,12 +38,10 @@ for (let c = 0; c < brickColumnCount; c++) {
 function drawBricks() {
   for (let c = 0; c < brickColumnCount; c++) {
     for (let r = 0; r < brickRowCount; r++) {
-      let brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
-      let brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
-      bricks[c][r].x = brickX;
-      bricks[c][r].y = brickY;
+      bricks[c][r].x = 0;
+      bricks[c][r].y = 0;
       ctx.beginPath();
-      ctx.rect(brickX, brickY, brickWidth, brickHeight);
+      ctx.rect(0, 0, brickWidth, brickHeight);
       ctx.fillStyle = "#0095DD";
       ctx.fill();
       ctx.closePath();
@@ -92,9 +93,9 @@ function drawPaddle() {
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  drawBricks();
   drawBall();
   drawPaddle();
+  drawBricks();
   x += dx;
   y += dy;
 

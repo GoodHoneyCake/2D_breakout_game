@@ -81,10 +81,10 @@ function keyUpHandler(event) {
 
 document.addEventListener("mousemove", mouseMoveHandler, false);
 
-function mouseMoveHandler(e) {
-  let relativeX = e.clientX - canvas.offsetLeft;
+function mouseMoveHandler(event) {
+  let relativeX = event.clientX - canvas.offsetLeft;
   if (relativeX > 0 && relativeX < canvas.width) {
-    paddleX = relativeX - paddleWidth / 2;
+    paddlex = relativeX - paddleWidth / 2;
   }
 }
 

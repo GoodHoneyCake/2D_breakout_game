@@ -24,8 +24,6 @@ let brickPadding = 10;
 let brickOffsetTop = 30;
 let brickOffsetLeft = 30;
 
-let score = 0;
-
 // bricks init
 let bricks = [];
 for (let c = 0; c < brickColumnCount; c++) {
@@ -53,12 +51,12 @@ function drawBricks() {
   }
 }
 
-function randomColorStyle() {
-  // H(Hue)S(Saturation)L(Lightness)
-  // This will create a random color with same saturation and light intensity (luminance).
-  // https://stackoverflow.com/questions/23861481/randomize-rgb-in-html5-canvas-with-a-new-value-for-each-fillrect-using-javascrip
-  ctx.fillStyle = "hsl(" + 360 * Math.random() + ", 50%, 50%)";
-}
+// function randomColorStyle() {
+//   // H(Hue)S(Saturation)L(Lightness)
+//   // This will create a random color with same saturation and light intensity (luminance).
+//   // https://stackoverflow.com/questions/23861481/randomize-rgb-in-html5-canvas-with-a-new-value-for-each-fillrect-using-javascrip
+//   ctx.fillStyle = "hsl(" + 360 * Math.random() + ", 50%, 50%)";
+// }
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -92,21 +90,10 @@ function collisionDetection() {
         ) {
           dy = -dy;
           b.status = 0;
-          score++;
-          if (score == brickRowCount * brickColumnCount) {
-            alert(`YOU WIN, CONGRATULATIONS!"  Score: ${score}`);
-            document.location.reload();
-          }
         }
       }
     }
   }
-}
-
-function drawScore() {
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "#0095DD";
-  ctx.fillText("Score: " + score, 8, 20);
 }
 
 function drawBall() {
@@ -130,7 +117,6 @@ function draw() {
   drawBricks();
   drawBall();
   drawPaddle();
-  drawScore();
   collisionDetection();
 
   x += dx;
